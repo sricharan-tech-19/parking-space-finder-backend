@@ -8,8 +8,10 @@ dotenv.config();
 
 const app = express();
 
+// ✅ Enable CORS for all origins (critical for mobile/web clients)
+app.use(cors({ origin: '*' }));
+
 // ✅ Middleware
-app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
